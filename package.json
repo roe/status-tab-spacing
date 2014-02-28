@@ -1,15 +1,16 @@
 {
   "name": "status-tab-spacing",
   "main": "./lib/status-tab-spacing",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Display tab length in the editor view",
-  "activationEvents": ["status-tab-spacing:toggle"],
+  "activationEvents": [
+    "status-tab-spacing:toggle"
+  ],
   "repository": "https://github.com/roe/status-tab-spacing",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
