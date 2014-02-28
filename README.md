@@ -1,3 +1,3 @@
 # status-tab-spacing package
 
-A short description of your package.
+Displays the length of tabs in the editor view. Planning on implementing ability to edit tab length from editor view in the future.
