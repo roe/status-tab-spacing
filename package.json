@@ -5,7 +5,7 @@
   "private": true,
   "description": "Display tab length in the editor view",
   "activationEvents": ["status-tab-spacing:toggle"],
-  "repository": "https://github.com/atom/status-tab-spacing",
+  "repository": "https://github.com/roe/status-tab-spacing",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
