@@ -1,0 +1,15 @@
+{
+  "name": "status-tab-spacing",
+  "main": "./lib/status-tab-spacing",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A short description of your package",
+  "activationEvents": ["status-tab-spacing:toggle"],
+  "repository": "https://github.com/atom/status-tab-spacing",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}

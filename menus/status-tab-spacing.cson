@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable status-tab-spacing': 'status-tab-spacing:toggle'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'status-tab-spacing'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'status-tab-spacing:toggle' }
+      ]
+    ]
+  }
+]
