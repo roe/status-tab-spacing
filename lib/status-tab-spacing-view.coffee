@@ -1,4 +1,5 @@
 {View} = require 'atom'
+TabSpacingSelector = require './tab-spacing-selector'
 
 module.exports =
 class StatusTabSpacingView extends View
@@ -7,6 +8,7 @@ class StatusTabSpacingView extends View
 
   initialize: ->
     atom.workspaceView.command "status-tab-spacing:toggle", => @toggle()
+    atom.workspaceView.command "editor:set-tab-spacing", => @setTabSpacing()
 
   destroy: ->
     @detach()
@@ -23,6 +25,9 @@ class StatusTabSpacingView extends View
 
     @getTabSpacing()
 
-  getTabSpacing: =>
+  getTabSpacing: ->
     spaces = atom.config.get('editor.tabLength')
-    @text("Spaces: #{spaces}").show()
+    @text("Spaces: #{spaces}").show().on 'click', @setTabSpacing
+
+  setTabSpacing: ->
+    new TabSpacingSelector()
