@@ -1,7 +1,7 @@
 {
   "name": "status-tab-spacing",
   "main": "./lib/status-tab-spacing",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "description": "Display tab length in the editor view",
   "activationEvents": [
