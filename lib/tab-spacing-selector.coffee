@@ -1,26 +1,42 @@
-{$$, SelectListView} = require 'atom'
+{$$, SelectListView} = require 'atom-space-pen-views'
+{Emitter} = require 'atom'
 
 module.exports =
 class TabSpacingSelector extends SelectListView
-  initialize: ->
+  initialize: (spacing) ->
     super
     @addClass 'overlay from-top'
     @list.addClass 'mark-active'
-
-    @currentSpacing = atom.config.get 'editor.tabLength'
-    @subscribe atom.config.observe 'editor.tabLength', => @currentSpacing = atom.config.get 'editor.tabLength'
-
+    
+    @emitter = new Emitter
+    
+    @currentSpacing = spacing
+    
     @setItems ['2 spaces', '4 spaces']
-    atom.workspaceView.append this
+    
+    @panel ?= atom.workspace.addModalPanel(item: this)
+    @panel.show()
+    
     @focusFilterEditor()
 
   viewForItem: (item) ->
+    # change this to proper $$ generation
     element = document.createElement 'li'
     element.classList.add 'active' if parseInt(item) is @currentSpacing
     element.textContent = item
-    element
+    return element
+  
+  onConfirmItem: (callback) ->
+    @emitter.on 'confirmed-item', callback
 
   confirmed: (item) ->
-    @cancel()
     return unless item
-    atom.config.set 'editor.tabLength', parseInt item
+    @emitter.emit 'confirmed-item', parseInt(item)
+  
+  cancelled: ->
+    @emitter.emit 'cancelled-selection'
+    @destroy()
+  
+  destroy: ->
+    @panel?.destroy()
+    @emitter.clear()
