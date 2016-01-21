@@ -1,9 +1,8 @@
 # status-tab-spacing package
 
-Displays the length of tabs in the editor view and allows you to switch between tab length. Feel free to fork and improve!
+Displays the length of tabs in the active editor down in the status bar and allows you to switch between tab length. Feel free to fork and improve!
 
 ## Usage
-* `ctrl + option + o` toggles the package
 * `ctrl + option + p` brings up the spacing menu
 
 ## Screenshots
