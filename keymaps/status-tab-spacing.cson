@@ -8,5 +8,4 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 'atom-workspace':
-  'ctrl-alt-o': 'status-tab-spacing:toggle'
-  'ctrl-alt-p': 'editor:set-tab-spacing'
+  'ctrl-alt-t': 'editor:set-tab-spacing'
